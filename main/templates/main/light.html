@@ -1,0 +1,25 @@
+{% extends "main/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="jumbotron text-center">
+  <div class="container">
+    <h1>Switch me lites ON</h1>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <a href = "{% url 'main:IndexView' %}">Back</a>
+  </div>
+  <div class="row">
+    <span>Light Settings</span><span><a href = "{% url 'main:delLight' pk%}">Delete</a></span>
+  </div>
+  <div class="row">
+    <form action="" method="post">{% csrf_token %}
+    {{form}}
+    <button type="submit" value = "ok"> Submit </button>
+  </form>
+  </div>
+</div>
+{% endblock %}

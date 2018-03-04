@@ -1,0 +1,22 @@
+{% extends "main/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+<div class="jumbotron text-center">
+  <div class="container">
+    <h1>Switch me lites ON</h1>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    List Lights Here
+    <ul>
+      {% for Light in light_list %}
+        <li><a href = "{% url 'main:LightView' Light.id %}">{{Light.id}}{{Light.name}}</a></li>
+      {% endfor %}
+    </ul>
+    <a href = "{% url 'main:CreateLight' %}">Add</a>
+  </div>
+</div>
+{% endblock %}
